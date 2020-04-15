@@ -1,0 +1,25 @@
+.card {
+    /* display: flex; */
+    /* flex-direction: row; */
+    height: 100px;
+    border: 3px;
+    border-style: solid;
+    margin: 10px 20px;
+}
+
+button {
+    /* display: inline-flex; */
+    width: 100px;
+    height: 40px;
+    justify-self: end;
+    align-self: flex-end;
+    margin: 5px;
+}
+
+.card-red {
+    border-color: pink;
+}
+
+.card-green {
+    border-color: greenyellow;
+}
