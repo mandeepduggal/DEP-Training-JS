@@ -1,0 +1,7 @@
+<div [ngClass]="cardClass">
+    {{user|fullName}}
+    <div class="buttonDiv">
+        <button *ngIf="anchorName == 'Manage'" class="btn btn-warning" (click)="updateUser(user.id)">Edit</button>
+        <button (click)=invertActivationId(user.id) [ngClass]="buttonClass">{{anchorName|status:"buttonName"}}</button>
+    </div>
+</div>
