@@ -1,0 +1,74 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: gray;
+}
+
+header {
+    padding: 10px 0px;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    background-color: #232323;
+}
+
+#PreviousPageButton {
+    float: left;
+}
+
+#NextPageButton {
+    float: right;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    margin: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#CardViewDiv {
+    background-color: white;
+    margin: 10px;
+    border: 10px white solid;
+    border-radius: 10px;
+    width: 350px;
+    height: 450px;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+#SearchBar {
+    display: flex;
+    height: 30px;
+    border: solid 1px;
+    border-radius: 50px;
+}
+
+#SearchTextBar {
+    width: 400px;
+    height: 100%;
+    border: none;
+}
+
+#SearchButton {
+    border: none;
+    height: 100%;
+    background-color: gray;
+    width: 60px;
+}
+
+#PreviousPageButton,
+#NextPageButton {
+    width: 70px;
+    background-color: greenyellow;
+    border: none;
+}
