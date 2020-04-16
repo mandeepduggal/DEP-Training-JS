@@ -1,0 +1,25 @@
+table {
+    width: 100%;
+}
+
+.card {
+    margin-top: 10px;
+}
+
+h3 {
+    width: 400px;
+}
+
+p {
+    font-style: italic;
+    font-variant: small-caps;
+    font-size: 20px;
+}
+
+.active {
+    color: green;
+}
+
+.deleted {
+    color: red;
+}

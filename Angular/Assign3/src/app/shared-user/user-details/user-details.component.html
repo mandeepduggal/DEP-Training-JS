@@ -1,0 +1,52 @@
+<div class="card col-12">
+    <h3>{{user|fullName}}</h3>
+    <p class={{activityState}}>{{activityState?activityState:""}}</p>
+    <table>
+        <tr>
+            <td>
+                Login Id
+            </td>
+            <td>
+                {{user?.login}}
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                First Name
+            </td>
+            <td>
+                {{user?.firstName}}
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Last Name
+            </td>
+            <td>
+                {{user?.lastName}}
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Age
+            </td>
+            <td>
+                {{user?.age}}
+
+            </td>
+        </tr>
+        <tr style="font-style: italic;">
+            <td>
+                Last Updated
+            </td>
+            <td>
+                {{user?.updatedAt | date:"dd/MM/yyyy"}}
+
+            </td>
+        </tr>
+    </table>
+
+</div>
