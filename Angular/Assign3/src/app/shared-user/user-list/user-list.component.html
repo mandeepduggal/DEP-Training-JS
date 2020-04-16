@@ -1,7 +1,0 @@
-<div class="main-div">
-    <button class="btn btn-success" *ngIf="isDeactivate == undefined" (click)="createNewUser()">Create</button>
-    <div *ngFor="let user of userList">
-        <app-user [user]=user anchorName={{anchorName}} (invertActivationStatus)="invertActivationStatus($event)"></app-user>
-
-    </div>
-</div>
