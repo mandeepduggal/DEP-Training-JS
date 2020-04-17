@@ -1,20 +1,21 @@
+function setAblityOfButton(ability) {
+    document.getElementById('PreviousPageButton').disabled = ability;
+}
+
 function mainCardView() {
-    console.log(responseData);
     cardViewTemplate();
     if (index <= 0) {
-        document.getElementById('PreviousPageButton').disabled = true;
+        setAblityOfButton(true);
     } else {
-        document.getElementById('PreviousPageButton').disabled = false;
+        setAblityOfButton(false);
     }
 }
 
 function cardViewTemplate() {
-    console.log(responseData);
-    let mainNode = document.querySelector('main');
+    let mainNode = getMainNode()
     mainNode.innerHTML = '';
     for (let i = index; i < ((responseData.length < (index + max)) ? responseData.length : (index + max)); i++) {
         // Template of Card
-        console.log(responseData[i]);
 
         let card = '<div id="CardViewDiv" name="CardViewDiv" class="CardViewDiv">' +
             '<img src="' + responseData[i]["snippet"]["thumbnails"]["high"]["url"] + '" alt="image">' +
@@ -27,4 +28,8 @@ function cardViewTemplate() {
             '</div>';
         mainNode.innerHTML += card;
     }
+}
+
+function getMainNode() {
+    return document.querySelector('main');
 }
