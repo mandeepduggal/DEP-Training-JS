@@ -1,0 +1,20 @@
+{
+  "name": "youtubetest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "karma": "^5.0.2",
+    "karma-cli": "^2.0.0",
+    "karma-jasmine": "^3.1.1",
+    "karma-phantomjs2-launcher": "^0.5.0"
+  },
+  "devDependencies": {
+    "karma-chrome-launcher": "^3.1.0"
+  }
+}
