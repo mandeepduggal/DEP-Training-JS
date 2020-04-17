@@ -37,17 +37,15 @@ export class UpdateOperationComponent implements OnInit {
           age: result["age"]
         });
       },
-      (error) => {console.log("Error -",error)},
-      () =>{console.log("Completed getUserDetail")});
+      (error) => {alert("Error -"+error)});
       
   }
   
   updateUser() {
-    console.log(this.updateForm.value);
     this.userService.updateDetail(this.updateForm.value).subscribe(
-      (result)=>{console.log("Result: "+result);},
-      (error) => {console.log("Error -",error)},
-      () => {console.log("complete");this.getUSerDetails(this.updateForm.value["id"])});
+      (result)=>{return result;},
+      (error) => {alert("Error - "+error)},
+      () => {this.getUSerDetails(this.updateForm.value["id"])});
   }
 
 }

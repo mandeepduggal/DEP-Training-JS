@@ -24,11 +24,10 @@ export class CreateOperationComponent implements OnInit {
   }
 
   createUser() {
-    console.log(this.createForm.value);
     this.userService.createUser(this.createForm.value).subscribe(
-      (result)=>{console.log("Result: "+result);},
-      (error) => {console.log("Error -",error)},
-      () => {console.log("complete");this.createForm.reset()});
+      (result)=>{return result},
+      (error) => {alert("Error - "+error)},
+      () => {this.createForm.reset()});
   }
 
 }

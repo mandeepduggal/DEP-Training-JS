@@ -20,7 +20,6 @@ export class UserComponent implements OnInit {
   ngOnInit(): void {
     this.buttonClass= "btn ";
     this.cardClass = "card ";
-    // console.log("user = "+this.user.firstName);
     this.buttonClass += this.anchorName != "Manage"?(this.anchorName === "Activate"?"btn-danger":"btn-success"):"btn-primary";
     this.cardClass += this.user["isDeleted"] == false?"card-green":"card-red";
 

@@ -1,13 +1,10 @@
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AppComponent } from './app.component';
 import { ShowActiveUserComponent } from './active/show-active-user/show-active-user.component';
 import { ShowDeletedUserComponent } from './deleted/show-deleted-user/show-deleted-user.component';
-import { CreateOperationComponent } from './form-operation/create-operation/create-operation.component';
 
 
 const routes: Routes = [
-  // {path:'',component:AppComponent},
   {path:'active',component:ShowActiveUserComponent},
   {path:'deleted',component:ShowDeletedUserComponent},
   {

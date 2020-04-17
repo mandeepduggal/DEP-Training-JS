@@ -18,25 +18,18 @@ export class UserDetailsComponent implements OnInit {
     const id = this.route.snapshot.params["id"];
      this.userService.getUserDetail(id).subscribe(
       (result)=>{this.user = result;
-        // console.log(this.user);
       this.activityState = this.user.isDeleted == true?"active":"deleted";
       },
-      (error) => {console.log("Error -",error)},
-      () =>{console.log("Completed")}
+      (error) => {alert("Error - "+error)}
     );
     this.route.params.subscribe((params) => {
       
       this.userService.getUserDetail(params['id']).subscribe(
         (result)=>{this.user = result; 
-          // console.log(this.user);
         this.activityState = this.user.isDeleted == false?"active":"deleted";
         },
-        (error) => {console.log("Error -",error)},
-        () =>{console.log("Completed")}
+        (error) => {alert("Error -"+error)}
       );
-        
     });
-    console.log(this.user);
   }
-
 }

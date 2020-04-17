@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ShowDeletedUserComponent } from './show-deleted-user.component';
 
-xdescribe('ShowDeletedUserComponent', () => {
+describe('ShowDeletedUserComponent', () => {
   let component: ShowDeletedUserComponent;
   let fixture: ComponentFixture<ShowDeletedUserComponent>;
 
@@ -19,7 +19,7 @@ xdescribe('ShowDeletedUserComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it("test 'ngOnInit' function", () => {
+    expect(component.isDeactivate).toEqual("true");
   });
 });

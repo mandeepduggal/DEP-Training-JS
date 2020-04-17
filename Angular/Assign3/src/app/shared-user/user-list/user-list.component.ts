@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { UserServiceService } from 'src/app/user-service.service';
 import { Router } from '@angular/router';
-import { createOfflineCompileUrlResolver } from '@angular/compiler';
 
 @Component({
   selector: 'app-user-list',
@@ -15,7 +14,6 @@ export class UserListComponent implements OnInit {
   @Input () isDeactivate ;
   public anchorName ;
   ngOnInit(): void {
-    console.log("user-list OnInit : ",this.isDeactivate);
     this.isDeactivate == undefined ? this.getUsers() : this.isDeactivate == "false"? this.getDataOfActiveUser():this.getDataOfDeactiveUser();
     this.anchorName = this.isDeactivate == undefined ? "Manage" : this.isDeactivate == "false"? "Activate":"Deactivate";
   }
@@ -24,28 +22,23 @@ export class UserListComponent implements OnInit {
   getUsers(){
     this.userService.getUsers().subscribe(
       (result)=>{this.userList = result; },
-      (error) => {console.log("Error -",error)},
-      () =>{console.log("Completed")}
+      (error) => {alert("Error - "+error)}
     );
   }
   
   getDataOfActiveUser(){
     this.userService.getDataOfActiveUser().subscribe(
       (result)=>{this.userList = result; 
-      console.log(result);
       },
-      (error) => {console.log("Error -",error)},
-      () =>{console.log("Completed")}
+      (error) => {alert("Error - "+error)},
     );
   }
 
   getDataOfDeactiveUser(){
     this.userService.getDataOfDeactiveUser().subscribe(
       (result)=>{this.userList = result; 
-      console.log(result);
       },
-      (error) => {console.log("Error -",error)},
-      () =>{console.log("Completed")}
+      (error) => {alert("Error -"+error)}
     );
   }
 
@@ -55,8 +48,8 @@ export class UserListComponent implements OnInit {
     }
     else {
     this.userService.updateDetail({"id":id,"isDeleted":(this.isDeactivate == 'false')}).subscribe(
-      (result)=>{console.log("Result: "+result);},
-      (error) => {console.log("Error -",error)},
+      (result)=>{return result},
+      (error) => {alert("Error - "+error)},
       () =>{this.isDeactivate == "false"? this.getDataOfActiveUser():this.getDataOfDeactiveUser();});
     }
    }

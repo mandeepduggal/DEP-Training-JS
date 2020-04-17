@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpEventType } from '@angular/common/http';
 import { filter, tap, map } from 'rxjs/operators';
-import { Observable } from 'rxjs';
 
 interface User {
   id: string;

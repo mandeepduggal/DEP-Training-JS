@@ -1,8 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ManageUserComponent } from './manage-user.component';
 
-xdescribe('ManageUserComponent', () => {
+describe('ManageUserComponent', () => {
   let component: ManageUserComponent;
   let fixture: ComponentFixture<ManageUserComponent>;
 
@@ -19,7 +18,7 @@ xdescribe('ManageUserComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("test 'ngOnInit' function", () => {
     expect(component).toBeTruthy();
   });
 });

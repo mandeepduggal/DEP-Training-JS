@@ -19,7 +19,7 @@ describe('ShowActiveUserComponent', () => {
     fixture.detectChanges();
   });
 
-  it('check ngOnInit function', () => {
-    
+  it("test 'ngOnInit' function", () => {
+    expect(component.isDeactivate).toEqual("false")
   });
 });

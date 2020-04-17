@@ -1,8 +1,9 @@
 import { FullNamePipe } from './full-name.pipe';
 
-xdescribe('FullNamePipe', () => {
+describe('FullNamePipe', () => {
   it('create an instance', () => {
     const pipe = new FullNamePipe();
-    expect(pipe).toBeTruthy();
+    let user = {"firstName":"EPAM","lastName":"DEP"}
+    expect(pipe.transform(user)).toEqual("EPAM DEP");
   });
 });

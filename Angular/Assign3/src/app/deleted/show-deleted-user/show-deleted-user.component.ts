@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { UserServiceService } from 'src/app/user-service.service';
 
 @Component({
   selector: 'app-show-deleted-user',
@@ -9,7 +8,8 @@ import { UserServiceService } from 'src/app/user-service.service';
 export class ShowDeletedUserComponent implements OnInit {
 
   public users;
-  constructor(private userList: UserServiceService) { }
+  public isDeactivate = "true";
+  constructor() { }
 
   ngOnInit(): void {
   }

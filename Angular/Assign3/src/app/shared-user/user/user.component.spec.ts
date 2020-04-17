@@ -4,6 +4,8 @@ import { UserComponent } from './user.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Router } from '@angular/router';
 import { UserServiceService } from 'src/app/user-service.service';
+import { FullNamePipe } from '../../full-name.pipe';
+import { StatusPipe } from '../../status.pipe';
 
 describe('UserComponent', () => {
   let component: UserComponent;
@@ -22,10 +24,11 @@ describe('UserComponent', () => {
         }
       ],
       imports: [RouterTestingModule,HttpClientTestingModule],
-      declarations: [ UserComponent ]
+      declarations: [ UserComponent, FullNamePipe, StatusPipe ]
 
     })
     .compileComponents();
+    
   }));
 
   beforeEach(() => {
@@ -47,21 +50,20 @@ describe('UserComponent', () => {
     fixture.detectChanges();
   });
 
-  it("function call 'ngOnInit'", () => {
+  it("test 'ngOnInit' function", () => {
     const result = component.ngOnInit();
     expect(component.cardClass).toEqual("card card-green");
     expect(component.buttonClass).toEqual("btn btn-danger");
-    expect(component.buttonText).toEqual("Deactivate");
   });
 
-  it("function call 'updateUser'", () => {
+  it("test 'updateUser' function", () => {
     spyOn(router,'navigate');
     const result = component.updateUser("10");
     expect(router.navigate).toHaveBeenCalledWith(['manage/form/update','10']);
   });
 
 
-  it("function call 'invertActivationId'", () => {
+  it("test 'invertActivationId' function", () => {
     let userID = component.user["id"];
     component.invertActivationStatus.subscribe((id: string) => expect(id).toBe(userID));
     component.invertActivationId(userID);
