@@ -1,14 +1,95 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html> -->
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <script>
+        fetch("http://localhost:3000/api/user")
+            .then(resp => {
+                // console.log(resp.status);
+                if (resp.status != 200) {
+                    location.replace("http://localhost:3000/login");
+                }
+                console.log(resp);
+                return resp.json();
+            })
+            .then(data => {
+                console.log(data);
+                document.getElementsByClassName("headerEmailDiv")[0].innerHTML = data["userDetail"]["email"];
+                getPosts();
+            })
+            .catch(error => console.log(error));
+
+
+        function createPost() {
+            let message = document.getElementById("message").value;
+            if (message != undefined) {
+                fetch("http://localhost:3000/api/posts/new", {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        "message": message
+                    })
+                }).then(resp => getPosts())
+            }
+
+        }
+
+        function getPosts() {
+            fetch("http://localhost:3000/api/posts")
+                .then(resp => {
+                    console.log("getPosts resp", resp);
+                    // console.log(resp.status);
+                    if (resp.status != 200) {
+                        location.replace("http://localhost:3000/login");
+                    }
+                    // console.log(resp);
+                    return resp.json();
+                })
+                .then(data => {
+                    console.log("DATA ", data);
+                    if (data.length > 0) {
+                        document.getElementsByClassName("posts")[0].innerHTML = "";
+
+                        data.forEach(renderPost)
+                    }
+                })
+
+
+        }
+
+        function renderPost(item, index) {
+            document.getElementsByClassName("posts")[0].innerHTML += "<div class='postdata card'>" + item["post"] + "</div>";
+        }
+    </script>
 </head>
 
 <body>
-    Logo
+    <header class="jumbotron">
+        <h2>LOGO</h2>
+        <h2 class="headerEmailDiv"></h2>
+        <h2><a href="/api/signout">Signout</a></h2>
+    </header>
+
+    <main>
+        <form class="form">
+            <!-- <input type="text" name="message" id="message"> -->
+            <textarea name="message" id="message" cols="30" rows="10"></textarea>
+            <input type="button" id="submitButton" value="Submit" class="btn btn-primary" onclick="createPost()">
+        </form>
+        <div class="posts">
+        </div>
+    </main>
+
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>

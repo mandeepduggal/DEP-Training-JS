@@ -1,8 +1,43 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+* {
+    margin: 0px;
+    padding: 0px;
 }
 
-a {
-  color: #00B7FF;
+body {
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+main {
+    margin: 20px;
+    /* text-align: center;
+    justify-content: center; */
+}
+
+textarea {
+    width: 50%;
+    height: 30px;
+}
+
+#submitButton {
+    margin-top: -15px;
+    height: 30px;
+}
+
+.postdata {
+    margin: 15px;
+}
+
+.posts {
+    margin: auto;
+}
+
+.card {
+    width: 50%;
+    font-size: x-large;
+    padding: 15px;
 }

@@ -5,14 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 </head>
 
 <body>
-    <form action="/api/auth" method="POST">
-        <input type="text" name="uname" id="uname">
-        <input type="password" name="password" id="password">
-        <button type="submit">Submit</button>
+    <form action="/api/auth" method="POST" class="form col-3">
+        <label for="uname">User Name</label>
+        <input type="text" name="uname" id="uname" class="form-control">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" class="form-control"> <br>
+        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>

@@ -12,7 +12,7 @@ function getJSON() {
 
 function csvToJSON(csvData, id) {
 
-
+    console.log("abc");
     var lines = csvData.split("\r\n");
     var result = [];
     var headers = lines[0].split(",");
@@ -45,12 +45,16 @@ function csvToJSON(csvData, id) {
 
 
 function putJSON(obj) {
-    let dataline = "\r\n" + obj.uname + "," + obj.post;
+    let data = fs.readFileSync(path.join(__dirname, csvFilePath));
+    var lines = data.toString().split("\r\n");
+    let dataline = "\r\n" + lines.length + "," + obj.uname + "," + obj.post;
 
-    fs.appendFileSync(csvFilePath, dataline)
+    fs.appendFileSync(path.join(__dirname, csvFilePath), dataline);
+    console.log("DAtaLine = " + dataline);
 }
 
 // console.log(getJSON());
+
 
 module.exports = {
     "getJSON": getJSON,
