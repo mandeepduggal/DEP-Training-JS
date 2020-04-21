@@ -13,7 +13,7 @@ dirPath = process.argv.slice(2);
 if (fs.statSync(dirPath[0]).isFile()) {
     getFileDetail(dirPath[0]);
 } else {
-    readDir(dirPath[0])
+    readDir(dirPath[0]);
 
 }
 
