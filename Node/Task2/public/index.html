@@ -21,11 +21,9 @@
         function getUserDetail() {
             let uname = document.getElementById("uname").value;
             const url = "http://localhost:3000/userdetails?name=" + uname;
-            console.log(url);
             fetch(url)
                 .then(response => response.json())
                 .then(data => {
-                    console.log(data);
                     UserDetailBox = document.getElementById("UserDetailBox");
                     if (data.status == "ok") {
                         UserDetailBox.innerHTML = "<table style='width:300px'><tr>" +

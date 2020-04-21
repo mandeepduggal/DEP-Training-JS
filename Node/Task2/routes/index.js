@@ -6,7 +6,6 @@ router.get('/', function(req, res, next) {
     res.render('index', { title: 'Express' });
 });
 
-
 router.get('/userdetails', function(req, res, next) {
 
     let userDetail = [{
@@ -25,7 +24,6 @@ router.get('/userdetails', function(req, res, next) {
             "address": "user2, XYZ"
         }
     ];
-    console.log(req.query.name);
     for (let i = 0; i < userDetail.length; i++) {
         if (userDetail[i].fullName == req.query.name) {
             res.setHeader("Content-Type", "application/json");
@@ -34,9 +32,7 @@ router.get('/userdetails', function(req, res, next) {
         }
     }
     res.send({ "status": "error", "message": "User not found" });
-    // res.render('index', { title: 'Express' });
 
 });
-
 
 module.exports = router;
