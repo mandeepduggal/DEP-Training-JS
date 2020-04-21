@@ -19,12 +19,9 @@ if (fs.statSync(dirPath[0]).isFile()) {
 
 function readDir(pathName) {
     let files = fs.readdirSync(pathName);
-    console.log(files);
-    console.log(files.length)
     if (files.length != 0) {
         files.forEach(function(file) {
             filepath = path.join(pathName, file);
-            console.log(filepath)
             if (fs.statSync(filepath).isFile()) {
                 fs.appendFileSync("demo_new.md", filepath + "   " + getFileDetail(filepath) + "\n");
             } else {
