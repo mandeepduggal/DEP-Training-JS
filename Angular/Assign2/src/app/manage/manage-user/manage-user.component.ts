@@ -12,11 +12,6 @@ export class ManageUserComponent implements OnInit {
   public users;
   constructor(private userList: UserServiceService, private router: Router) { }
 
-
-  
   ngOnInit(): void {
-    console.log(this.users);
   }
-
-
 }

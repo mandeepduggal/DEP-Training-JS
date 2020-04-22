@@ -14,7 +14,6 @@ export class ShowActiveUserComponent implements OnInit {
 
   
   ngOnInit(): void {
-    console.log(this.users);
   }
 
 

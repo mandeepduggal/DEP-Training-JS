@@ -13,5 +13,4 @@ export class ShowDeletedUserComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

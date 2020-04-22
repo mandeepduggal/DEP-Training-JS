@@ -1,10 +1,11 @@
 .card {
     /* display: flex; */
     /* flex-direction: row; */
+    width: 40%;
     height: 100px;
     border: 3px;
     border-style: solid;
-    margin: 10px 20px;
+    margin: 3px;
 }
 
 button {
@@ -17,9 +18,9 @@ button {
 }
 
 .card-red {
-    border-color: pink;
+    border-color: red;
 }
 
 .card-green {
-    border-color: greenyellow;
+    border-color: green;
 }

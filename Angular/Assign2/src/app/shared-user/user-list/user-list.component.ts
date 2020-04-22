@@ -14,7 +14,6 @@ export class UserListComponent implements OnInit {
   @Input () isDeactivate ;
   public anchorName ;
   ngOnInit(): void {
-    console.log(this.isDeactivate);
     this.isDeactivate == undefined ? this.getUsers() : this.isDeactivate == "false"? this.getDataOfActiveUser():this.getDataOfDeactiveUser();
     this.anchorName = this.isDeactivate == undefined ? "Manage" : this.isDeactivate == "false"? "Activate":"Deactivate";
   }

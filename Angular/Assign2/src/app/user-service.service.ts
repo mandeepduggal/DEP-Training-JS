@@ -40,6 +40,3 @@ export class UserServiceService{
     return this.userDetails;
   }
 }
-
-
-

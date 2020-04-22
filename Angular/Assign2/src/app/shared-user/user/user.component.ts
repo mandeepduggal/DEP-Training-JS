@@ -18,14 +18,9 @@ export class UserComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    console.log(this.anchorName)
     this.buttonClass += this.anchorName != "Manage"?(this.anchorName === "Activate"?"btn-danger":"btn-success"):"btn-primary"
     this.cardClass += this.user.isDeleted == false?"card-green":"card-red";
-    // this.cardClass += this.anchorName == "Manage"?" col-6":"";
     this.buttonText = this.anchorName != "Manage"?(this.anchorName == "Activate"?"Deactivate":"Activate"):"Detail";
-    console.log(this.buttonText)
-
-    
   }
 
   invertActivationId(id :any){

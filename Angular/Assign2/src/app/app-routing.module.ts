@@ -6,7 +6,6 @@ import { ShowDeletedUserComponent } from './deleted/show-deleted-user/show-delet
 
 
 const routes: Routes = [
-  // {path:'',component:AppComponent},
   {path:'active',component:ShowActiveUserComponent},
   {path:'deleted',component:ShowDeletedUserComponent},
   {
